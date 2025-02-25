@@ -1,7 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const { stringify } = require('postcss');
 require('dotenv').config();
 
 const app = express();
@@ -20,25 +19,56 @@ mongoose.connect(mongoURI, {
 
 // Esquema de Mongoose
 const sondeoSchema = new mongoose.Schema({
-  genero: String,
+  seccionElectoral: String,
+  sexo: String,
   edad: Number,
-  localidad: String,
+  escolaridad: String,
+  conoceLaSeccion: String,
+  votaDondeVive: String,
+  VotoParaPresidencia: String,
+  beneficiario: Boolean,
+  instanciaDelBeneficio: String,
+  satisfaccionDelBeneficio: String,
+  casa: String,
+  trabajo: String,
   calle: String,
-  numExterior: Number,
-  numInterior: String,
-  codigoPostal: Number,
-  tipoVivienda: String,
-  numeroDeHabitantes: Number,
-  compartenMismoGasto: String,
-  gradoDeEstudios: String,
-  laEscuelaEstaEnTerritorioMunicipal: Boolean,
-  nombreDeLaEscuela: String,
-  gradoQueCursa: String,
-  actualmenteTrabaja: Boolean,
-  ocupacionActual: String,
-  medioDeTransporte: String,
-  calidadDelTransportePublico: String,
-  mayorProblematicaEnMovilidad: String
+  escuela: String,
+  mercado: String,
+  centro_comercial: String,
+  banco: String,
+  cajero: String,
+  transporte: String,
+  automovil: String,
+  parque: String,
+  consumoAlcohol: String,
+  pandillas: String,
+  ventaIlegalAlcohol: String,
+  ventaPirateria: String,
+  invasionPredios: String,
+  robosFrecuentes: String,
+  ventaDroga: String,
+  disparosFrecuentes: String,
+  secuestros: String,
+  homicidios: String,
+  problemaSeguridad: String,
+  problemaSeguridadOtro: String,
+  accionesSeguridad: String,
+  accionesSeguridadOtro: String,
+  participacionSeguridad: String,
+  conoceBeneficiosImpuestos: String,
+  conoceCampanasDescuentos: String,
+  eventosDeportivos: String,
+  obraPublicaInfluyente: String,
+  obraPublica: String,
+  vialidades: String,
+  vialidadesComentario: String,
+  espaciosSinLuminarias: String,
+  espaciosSinLuminariasComentario: String,
+  recoleccionBasura: String,
+  mercadosMunicipales: String,
+  calificacionAgua: String,
+  muestrasCulturales: String,
+  puertaVioleta: String,
 });
 
 const Sondeo = mongoose.model('sondeos', sondeoSchema);
